@@ -128,22 +128,15 @@ body {
   display: grid;
   grid-column: 2 / 3;
   gap: 0.25rem 0;
-
-  position: relative;
-}
-
-#backpack-closed {
-  position: absolute;
-  top: 104px;
 }
 
 .items {
   display: grid;
-  gap: 5px;
+  gap: 4px;
   grid-template: repeat(7, 1fr) / repeat(3, 1fr);
   position: absolute;
-  top: 115px;
-  left: 25px;
+  top: 114px;
+  left: 26px;
 }
 
 /* ----- BLOCK STYLES ----- */
@@ -185,12 +178,23 @@ body {
   z-index: 100;
 }
 
+.backpack-wrapper {
+  height: 400px;
+  width: 275px;
+  overflow: hidden;
+}
+
+#backpack {
+  transform: translate3d(0px, -400px, 0px);
+  transition: transform 400ms ease-in-out;
+}
+
 .items {
   width: 220px;
 }
 
 .item {
-  width: 70%;
+  width: 68%;
   margin: 0 auto;
 }
 

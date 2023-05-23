@@ -10,6 +10,7 @@ let items = document.querySelector("#items");
 let itemsDOM = "";
 let startBtn = document.querySelector("#start-btn");
 let playBtn = document.querySelector("#play-btn");
+let backpack = document.querySelector("#backpack");
 
 // Event Listeners
 
@@ -19,8 +20,7 @@ playBtn.addEventListener("click", renderGame);
 // Functions
 
 function openBackpack() {
-  // slide open bag
-  // INSERT CODE HERE
+  backpack.style.transform = "translate3d(0px, -0px, 0px)";
 
   // hide startBtn
   startBtn.classList.add("hidden");
