@@ -42,7 +42,7 @@ function renderGame() {
     } else if (sum > 21) {
       itemsDOM = "";
       for (let i = 0; i < 21; i++) {
-        itemsDOM += `<img class="item explosion" src="./images/explosion.png" alt="An explosion">`;
+        itemsDOM += `<img class="item explosion" src="./images/explosion.svg" alt="An explosion">`;
       }
       items.innerHTML = itemsDOM;
     }
