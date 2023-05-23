@@ -1,0 +1,213 @@
+/* ----- CUSTOM PROPERTIES ----- */
+
+:root {
+  --clr-neutral-200: #ffffff; /* Borders */
+  --clr-neutral-300: #bfc4c0;
+  --clr-neutral-400: #4a4e74; /* Icons */
+  --clr-neutral-700: #2b2839; /* Text */
+
+  --clr-blue-200: #eaf2fb; /* -200: Body (BG), Hover */
+  --clr-blue-400: #ddebf8; /* -400: Container (BG) */
+  --clr-blue-700: #b4c9f9; /* -700: Tags, Images */
+  --clr-green-200: #eef6f0;
+  --clr-green-400: #e0f0e5;
+  --clr-green-700: #a9d1b5;
+  --clr-orange-200: #fbf6f2;
+  --clr-orange-400: #f5e6db;
+  --clr-orange-700: #f3c09b;
+  --clr-pink-200: #fdf2f9;
+  --clr-pink-400: #fbe5f3;
+  --clr-pink-700: #f0b7dc;
+  --clr-purple-200: #f1edf8;
+  --clr-purple-400: #e7e1f4;
+  --clr-purple-700: #c6b8ff;
+  --clr-yellow-200: #fffce5;
+  --clr-yellow-400: #fffad1;
+  --clr-yellow-700: #fbf3ac;
+
+  --ff-regular: "Karla", Arial, sans-serif;
+  --ff-accent: "Pacifico", cursive;
+
+  --fw-light: 200;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* ----- CSS RESET ----- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ----- GENERAL STYLES ----- */
+
+body {
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-700);
+  background-color: var(--clr-neutral-200); /* Modify */
+
+  /* Live Demo Only */
+  display: grid;
+  place-content: center;
+  margin: 1rem;
+}
+
+/* ----- UTILITIES ----- */
+
+.hidden {
+  display: none;
+}
+
+/* ----- BUTTONS ----- */
+
+.btn {
+  cursor: pointer;
+  border: none;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  background-color: var(--clr-yellow-400);
+}
+
+/* ----- LAYOUT ----- */
+
+.container {
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+
+  /* BG Image */
+  position: relative;
+  isolation: isolate;
+}
+
+.container::after {
+  /* BG Image */
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+}
+
+.game__content {
+  display: grid;
+  grid-column: 2 / 3;
+  gap: 0.25rem 0;
+
+  position: relative;
+}
+
+#backpack-closed {
+  position: absolute;
+  top: 104px;
+}
+
+.items {
+  display: grid;
+  gap: 5px;
+  grid-template: repeat(7, 1fr) / repeat(3, 1fr);
+  position: absolute;
+  top: 115px;
+  left: 25px;
+}
+
+/* ----- BLOCK STYLES ----- */
+
+.container {
+  /* BG Image */
+  --bg-image: url(/images/forest-bg.svg);
+  --bg-image-opacity: 0.5;
+
+  border: 3px solid var(--clr-neutral-200);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+}
+
+.container::after {
+  /* BG Image */
+  opacity: var(--bg-image-opacity);
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.game__content {
+  padding: 1rem 0;
+  position: relative;
+}
+
+.game__title {
+  font-family: var(--ff-accent);
+  font-size: 3rem;
+  line-height: 1.5rem;
+  margin: 0.5rem 0 1.25rem;
+  letter-spacing: 0.4rem;
+  text-shadow: 2px 2px #ffe4cc;
+  transform: rotate(-2deg);
+  z-index: 100;
+}
+
+.items {
+  width: 220px;
+}
+
+.item {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.explosion {
+  animation-iteration-count: 1;
+  animation-name: emphasis;
+  animation-duration: 1.2s;
+}
+
+
+@keyframes emphasis {
+  20% {
+    transform: scale(0.25);
+    opacity: 0.25;
+  }
+}
+
+
+
+/* ----- MEDIA QUERIES ----- */
