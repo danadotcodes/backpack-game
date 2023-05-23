@@ -150,7 +150,7 @@ body {
 
 .container {
   /* BG Image */
-  --bg-image: url(./images/forest-bg.svg);
+  --bg-image: url(../images/forest-bg.svg);
   --bg-image-opacity: 0.5;
 
   border: 3px solid var(--clr-neutral-200);
