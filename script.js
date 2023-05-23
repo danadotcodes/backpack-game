@@ -36,13 +36,13 @@ function renderGame() {
     if (sum <= 21) {
       for (let i = 0; i < num; i++) {
         let randomItem = Math.floor(Math.random() * itemData.length);
-        itemsDOM += `<img class="item" src="../images/${itemData[randomItem].img}" alt="${itemData[randomItem].alt}">`;
+        itemsDOM += `<img class="item" src="images/${itemData[randomItem].img}" alt="${itemData[randomItem].alt}">`;
       }
       items.innerHTML = itemsDOM;
     } else if (sum > 21) {
       itemsDOM = "";
       for (let i = 0; i < 21; i++) {
-        itemsDOM += `<img class="item explosion" src="../images/explosion.svg" alt="An explosion">`;
+        itemsDOM += `<img class="item explosion" src="images/explosion.svg" alt="An explosion">`;
       }
       items.innerHTML = itemsDOM;
     }
