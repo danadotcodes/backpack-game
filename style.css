@@ -150,7 +150,7 @@ body {
 
 .container {
   /* BG Image */
-  --bg-image: url(/images/forest-bg.svg);
+  --bg-image: url(./images/forest-bg.svg);
   --bg-image-opacity: 0.5;
 
   border: 3px solid var(--clr-neutral-200);
@@ -200,14 +200,11 @@ body {
   animation-duration: 1.2s;
 }
 
-
 @keyframes emphasis {
   20% {
     transform: scale(0.25);
     opacity: 0.25;
   }
 }
-
-
 
 /* ----- MEDIA QUERIES ----- */
